@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Ticket | Campus Helpdesk</title>
+    <link rel="style.css" href="style.css">
+     <script src="ticket-data.js" defer></script>
+     <script src="script.js" defer></script>
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Campus Helpdesk</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="dashboard">
+
+    <h2>Helpdesk Dashboard</h2>
+
+    <div>
+        <h3>Total Tickets</h3>
+        <p id="totalTickets">0</p>
+    </div>
+
+    <div>
+        <h3>Open Tickets</h3>
+        <p id="openTickets">0</p>
+    </div>
+
+    <div>
+        <h3>In Progress</h3>
+        <p id="inProgressTickets">0</p>
+    </div>
+
+    <div>
+        <h3>Resolved</h3>
+        <p id="resolvedTickets">0</p>
+    </div>
+
+    <div>
+        <h3>Closed</h3>
+        <p id="closedTickets">0</p>
+    </div>
+
+    <h3>Tickets by Department</h3>
+
+    <p>ICT: <span id="ictTickets">0</span></p>
+
+    <p>Registry: <span id="registryTickets">0</span></p>
+
+    <p>Finance: <span id="financeTickets">0</span></p>
+
+</section>
+
+        <section class="ticket-form-section">
+
+            <div class="form-heading">
+                <h1>Submit a Support Request</h1>
+                <p>
+                    Tell us what you're experiencing.
+                    Our support team will help you.
+                </p>
+            </div>
+
+            <form id="ticketForm">
+
+                <div>
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+
+                <div>
+                    <label for="userType">User Type</label>
+                    <select id="userType" required>
+                        <option value="">Select user type</option>
+                        <option value="Student">Student</option>
+                        <option value="Staff">Staff</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="userId">Student/Staff Number</label>
+                    <input type="text" id="userId" required>
+                </div>
+
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email">
+                </div>
+
+                <div>
+                    <label for="category">Complaint Category</label>
+
+                    <select id="category" required>
+                        <option value="">Select complaint category</option>
+
+                        <option value="Wi-Fi Connectivity">
+                            Wi-Fi Connectivity
+                        </option>
+
+                        <option value="Email Account Issue">
+                            Email Account Issue
+                        </option>
+
+                        <option value="Forgotten Portal Password">
+                            Forgotten Portal Password
+                        </option>
+
+                        <option value="Portal Login Problem">
+                            Portal Login Problem
+                        </option>
+
+                        <option value="Course Registration">
+                            Course Registration
+                        </option>
+
+                        <option value="Course Change">
+                            Course Change
+                        </option>
+
+                        <option value="Missing Examination Results">
+                            Missing Examination Results
+                        </option>
+
+                        <option value="Registration Status">
+                            Registration Status
+                        </option>
+
+                        <option value="Tuition Payment">
+                            Tuition Payment
+                        </option>
+
+                        <option value="Tuition Balance">
+                            Tuition Balance
+                        </option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="priority">Priority</label>
+
+                    <select id="priority" required>
+                        <option value="">Select priority</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" required placeholder="put subject matter">
+                </div>
+
+                <div>
+                    <label for="description">Describe Your Problem</label>
+                    <textarea id="description" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">Submit Ticket</button>
+
+            </form>
+<section>
+    <h2>Submitted Tickets</h2>
+
+    <div class="ticket-filters">
+
+        <div>
+            <label for="departmentFilter">Department</label>
+            <select id="departmentFilter">
+                <option value="all">All Departments</option>
+                <option value="ICT">ICT</option>
+                <option value="Registry">Registry</option>
+                <option value="Finance">Finance</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="priorityFilter">Priority</label>
+            <select id="priorityFilter">
+                <option value="all">All Priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="statusFilter">Status</label>
+            <select id="statusFilter">
+                <option value="all">All Statuses</option>
+                <option value="Open">Open</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Resolved">Resolved</option>
+                <option value="Closed">Closed</option>
+            </select>
+        </div>
+
+    </div>
+   <div>
+    <label for="ticketSearch">Search Tickets</label>
+    <input
+        type="text"
+        id="ticketSearch"
+        placeholder="Search by ticket number, name or subject"
+    >
+</div>
+<div>
+    <label for="prioritySort">Sort by Priority</label>
+
+    <select id="prioritySort">
+        <option value="none">Default Order</option>
+        <option value="highToLow">High to Low</option>
+        <option value="lowToHigh">Low to High</option>
+    </select>
+</div>
+<div>
+    <label for="dateSort">Sort by Date</label>
+    <select id="dateSort">
+        <option value="none">Default Order</option>
+        <option value="newest">Newest to Oldest</option>
+        <option value="oldest">Oldest to Newest</option>
+    </select>
+</div>
+    <div id="ticketDisplay"></div>
+ 
+</section>
+        </section>
+
+    </main>
+   
+</body>
+</html>

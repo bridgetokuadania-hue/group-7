@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Campus Helpdesk Admin Dashboard</h1>
+    <p id="adminName"></p>
+
+    <h2>Overall Statistics</h2>
+
+    <p>Total Tickets: <span id="adminTotal">0</span></p>
+    <p>Open: <span id="adminOpen">0</span></p>
+    <p>In Progress: <span id="adminInProgress">0</span></p>
+    <p>Resolved: <span id="adminResolved">0</span></p>
+    <p>Closed: <span id="adminClosed">0</span></p>
+
+    <h2>Tickets by Department</h2>
+    <p>ICT: <span id="adminICT">0</span></p>
+    <p>Registry: <span id="adminRegistry">0</span></p>
+    <p>Finance: <span id="adminFinance">0</span></p>
+
+    <h2>All Campus Tickets</h2>
+    <div id="adminTicketDisplay"></div>
+
+    <script src="ticket-data.js"></script>
+    <script src="admin.js"></script>
+
+</body>
+</html>
